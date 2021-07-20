@@ -1,6 +1,6 @@
 package com.opsec.assessment.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import com.opsec.assessment.entity.UserEntity;
@@ -10,6 +10,6 @@ import com.opsec.assessment.entity.UserEntity;
  *
  */
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends MongoRepository<UserEntity, String> {
 
 }

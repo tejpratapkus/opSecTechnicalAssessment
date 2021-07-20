@@ -62,7 +62,7 @@ public class UserController {
 	 */
 	@GetMapping("/user")
 	@ApiOperation(value = "Get User", nickname = "Get User", httpMethod = "GET", consumes = MediaType.APPLICATION_JSON_VALUE, response = ApplicationResponse.class)
-	public ResponseEntity<ApplicationResponse> getUsers(@RequestParam(value = "id", required = false) Long id) {
+	public ResponseEntity<ApplicationResponse> getUsers(@RequestParam(value = "id", required = false) String id) {
 		ApplicationResponse response = service.getUsers(id);
 		return ResponseEntity.ok().body(response);
 	}
@@ -77,7 +77,7 @@ public class UserController {
 	 */
 	@PutMapping("/user/{id}")
 	@ApiOperation(value = "Update User", nickname = "Update User", httpMethod = "PUT", consumes = MediaType.APPLICATION_JSON_VALUE, response = ApplicationResponse.class)
-	public ResponseEntity<ApplicationResponse> updateUser(@PathVariable("id") Long id,
+	public ResponseEntity<ApplicationResponse> updateUser(@PathVariable("id") String id,
 			@Valid @RequestBody UserRequest request) {
 		ApplicationResponse response = service.updateUser(id, request);
 		return ResponseEntity.ok().body(response);
@@ -86,13 +86,13 @@ public class UserController {
 	/**
 	 * This method is used to delete user information on the basis of id
 	 * 
-	 * @param request
+	 * @param id
 	 * @return ApplicationResponse
 	 * 
 	 */
 	@DeleteMapping("/user/{id}")
 	@ApiOperation(value = "Delete User", nickname = "Delete User", httpMethod = "DELETE", consumes = MediaType.APPLICATION_JSON_VALUE, response = ApplicationResponse.class)
-	public ResponseEntity<ApplicationResponse> deleteUser(@PathVariable("id") Long id) {
+	public ResponseEntity<ApplicationResponse> deleteUser(@PathVariable("id") String id) {
 		ApplicationResponse response = service.deleteUser(id);
 		return ResponseEntity.ok().body(response);
 

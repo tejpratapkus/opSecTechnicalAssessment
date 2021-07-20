@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class UserResponse {
 
-	private Long id;
+	private String id;
 	private String firstName;
 	private String surName;
 	private Date dob;

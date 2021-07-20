@@ -2,8 +2,6 @@ package com.opsec.assessment.service;
 
 import java.util.function.Function;
 
-import javax.validation.Valid;
-
 import com.opsec.assessment.entity.UserEntity;
 import com.opsec.assessment.mapper.Mapper;
 import com.opsec.assessment.request.UserRequest;
@@ -16,13 +14,13 @@ import com.opsec.assessment.response.UserResponse;
  */
 public interface IUserService {
 
-	ApplicationResponse createUser(@Valid UserRequest request);
+	ApplicationResponse createUser(UserRequest request);
 
-	ApplicationResponse getUsers(Long id);
+	ApplicationResponse getUsers(String id);
 
-	ApplicationResponse updateUser(Long id, @Valid UserRequest request);
+	ApplicationResponse updateUser(String id, UserRequest request);
 
-	ApplicationResponse deleteUser(Long id);
+	ApplicationResponse deleteUser(String id);
 
 	/**
 	 * This method is used to return UserEntity object from UserRequest object

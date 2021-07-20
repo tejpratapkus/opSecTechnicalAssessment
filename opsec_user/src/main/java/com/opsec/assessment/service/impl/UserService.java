@@ -52,10 +52,10 @@ public class UserService implements IUserService {
 	 * 
 	 */
 	@Override
-	public ApplicationResponse getUsers(Long id) {
+	public ApplicationResponse getUsers(String id) {
 
 		List<UserResponse> responses = new ArrayList<>();
-		if (id != null && id != 0) {
+		if (!StringUtils.isEmpty(id)) {
 			Optional<UserEntity> userEntity = repository.findById(id);
 			if (userEntity.isPresent()) {
 				UserEntity user = userEntity.get();
@@ -85,7 +85,7 @@ public class UserService implements IUserService {
 	 * 
 	 */
 	@Override
-	public ApplicationResponse updateUser(Long id, UserRequest request) {
+	public ApplicationResponse updateUser(String id, UserRequest request) {
 		UserEntity user = null;
 		Optional<UserEntity> userEntity = repository.findById(id);
 		if (userEntity.isPresent()) {
@@ -112,12 +112,12 @@ public class UserService implements IUserService {
 	/**
 	 * This method is used to delete user information from db on the basis of id
 	 * 
-	 * @param request
+	 * @param id
 	 * @return ApplicationResponse
 	 * 
 	 */
 	@Override
-	public ApplicationResponse deleteUser(Long id) {
+	public ApplicationResponse deleteUser(String id) {
 		repository.deleteById(id);
 		return new ApplicationResponse(true, "Success", null);
 	}

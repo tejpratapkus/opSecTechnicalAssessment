@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.opsec.assessment.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -104,9 +105,9 @@ public class UserService implements IUserService {
 			}
 			user = repository.save(user);
 			return new ApplicationResponse(true, "Success", enitytomodel.apply(user));
+		} else {
+			throw new UserNotFoundException("User not found");
 		}
-
-		return new ApplicationResponse(false, "Failure", enitytomodel.apply(user));
 	}
 
 	/**
@@ -118,8 +119,13 @@ public class UserService implements IUserService {
 	 */
 	@Override
 	public ApplicationResponse deleteUser(String id) {
-		repository.deleteById(id);
-		return new ApplicationResponse(true, "Success", null);
+		Optional<UserEntity> userEntity = repository.findById(id);
+		if (userEntity.isPresent()) {
+			repository.deleteById(id);
+			return new ApplicationResponse(true, "Success", null);
+		} else {
+			throw new UserNotFoundException("User not found");
+		}
 	}
 
 }

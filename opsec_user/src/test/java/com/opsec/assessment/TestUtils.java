@@ -6,11 +6,19 @@ import com.opsec.assessment.response.UserResponse;
 
 import java.util.Date;
 
+/**
+ * This class is used to create default object which will be used at the time of testing
+ *
+ * @author tkushwaha
+ *
+ */
 public class TestUtils {
 
+    /**
+     * This method is used to handle method argument is not valid
+     */
     public static UserEntity getUserEntity() {
         UserEntity entity = new UserEntity();
-        entity.setId("1");
         entity.setFirstName("tej");
         entity.setSurName("pratap");
         entity.setDob(new Date());
@@ -18,15 +26,9 @@ public class TestUtils {
         return entity;
     }
 
-    public static UserEntity getUserEntityForSave() {
-        UserEntity entity = new UserEntity();
-        entity.setFirstName("tej");
-        entity.setSurName("pratap");
-        entity.setDob(new Date());
-        entity.setTitle("Mr.");
-        return entity;
-    }
-
+    /**
+     * This method is used to handle method argument is not valid
+     */
     public static UserRequest getUserRequest() {
         UserRequest request = new UserRequest();
         request.setFirstName("tej");
@@ -36,6 +38,9 @@ public class TestUtils {
         return request;
     }
 
+    /**
+     * This method is used to handle method argument is not valid
+     */
     public static UserResponse getUserResponse() {
         UserResponse response = new UserResponse();
         response.setId("1");

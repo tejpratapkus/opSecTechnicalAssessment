@@ -10,6 +10,12 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
+/**
+ * This class is used to generate log, filters run if an error occurs in the course of handling the request.
+ *
+ * @author tkushwaha
+ *
+ */
 @Component
 public class ErrorFilter extends ZuulFilter {
 

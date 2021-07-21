@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 
-//@EnableZuulServer
+/**
+ * @author tkushwaha
+ *
+ */
 @EnableZuulProxy
 @SpringBootApplication
 public class GatewayApplication {

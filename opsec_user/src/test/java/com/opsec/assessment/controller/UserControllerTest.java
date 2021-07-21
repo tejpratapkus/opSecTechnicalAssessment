@@ -14,6 +14,12 @@ import com.opsec.assessment.request.UserRequest;
 import com.opsec.assessment.response.ApplicationResponse;
 import com.opsec.assessment.service.IUserService;
 
+/**
+ * This class is used to write the test cases for user controller
+ *
+ * @author tkushwaha
+ *
+ */
 @SpringBootTest
 public class UserControllerTest {
 
@@ -24,6 +30,9 @@ public class UserControllerTest {
 	@Mock
 	private IUserService service;
 
+	/**
+	 * This method is used to create user and validate the response status
+	 */
 	@Test
 	void test_createUser() {
 		UserRequest request = TestUtils.getUserRequest();
@@ -34,6 +43,9 @@ public class UserControllerTest {
 		assertEquals(true, responseEntity.getBody().isStatus());
 	}
 
+	/**
+	 * This method is used to get user on the basis id provided and validate the response status
+	 */
 	@Test
 	void test_getUserById() {
 
@@ -44,6 +56,9 @@ public class UserControllerTest {
 		assertEquals(true, responseEntity.getBody().isStatus());
 	}
 
+	/**
+	 * This method is used to get users on if not providing the id and validate the response status
+	 */
 	@Test
 	void test_getUsers() {
 
@@ -54,6 +69,9 @@ public class UserControllerTest {
 		assertEquals(true, responseEntity.getBody().isStatus());
 	}
 
+	/**
+	 * This method is used to get users on if not providing the id and validate the response status
+	 */
 	@Test
 	void test_getUsersFalse() {
 
@@ -64,6 +82,9 @@ public class UserControllerTest {
 		assertEquals(true, responseEntity.getBody().isStatus());
 	}
 
+	/**
+	 * This method is used to update users on the basis of id providing and validate the response status
+	 */
 	@Test
 	void test_updateUser() {
 
@@ -75,6 +96,9 @@ public class UserControllerTest {
 		assertEquals(true, responseEntity.getBody().isStatus());
 	}
 
+	/**
+	 * This method is used to delete users on the basis of id providing and validate the response status
+	 */
 	@Test
 	void test_deleteUser() {
 

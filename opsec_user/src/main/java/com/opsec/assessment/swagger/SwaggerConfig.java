@@ -19,6 +19,12 @@ import java.util.Set;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
+/**
+ * This class is used handle swagger configuration
+ *
+ * @author tkushwaha
+ *
+ */
 @PropertySource("classpath:swagger.properties")
 @Configuration
 @EnableSwagger2

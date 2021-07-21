@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * This class is used the return response at application level
+ *
  * @author tkushwaha
  *
  */

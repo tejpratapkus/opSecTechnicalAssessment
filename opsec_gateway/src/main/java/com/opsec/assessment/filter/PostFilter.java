@@ -10,6 +10,12 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
+/**
+ * This class is used to generate log, filters run after the request has been routed.
+ *
+ * @author tkushwaha
+ *
+ */
 @Component
 public class PostFilter extends ZuulFilter {
 

@@ -90,6 +90,22 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 	}
 
 	/**
+	 * This method is used handle exception if user is not found
+	 *
+	 * @param ex
+	 * @return Object
+	 *
+	 */
+	@ExceptionHandler({ UserNotFoundException.class })
+	public ResponseEntity<Object> userNotFoundException(UserNotFoundException ex) {
+		String error = ex.getMessage();
+		ApplicationResponse response = new ApplicationResponse();
+		response.setMessage(error);
+		response.setStatus(false);
+		return ResponseEntity.badRequest().body(response);
+	}
+
+	/**
 	 * This method is used to handle no handler found exception
 	 * 
 	 * @param ex

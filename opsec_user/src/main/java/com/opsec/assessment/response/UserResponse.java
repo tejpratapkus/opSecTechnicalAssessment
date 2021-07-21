@@ -4,6 +4,12 @@ import java.util.Date;
 
 import lombok.Data;
 
+/**
+ * This class is used the return response for User
+ *
+ * @author tkushwaha
+ *
+ */
 @Data
 public class UserResponse {
 

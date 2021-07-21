@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 import lombok.Data;
 
 /**
+ * This class is used to handle user request body
+ *
  * @author tkushwaha
  *
  */

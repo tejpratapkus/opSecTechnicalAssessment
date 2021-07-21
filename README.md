@@ -45,9 +45,9 @@ $ mvn clean install
 ## Running the full application
 
 ```bash
-$ java -jar opSecTechnicalAssessment/target/opsec_user-0.0.1-SNAPSHOT.jar
+$ nohup java -jar opSecTechnicalAssessment/target/opsec_user-0.0.1-SNAPSHOT.jar &
 
-$ java -jar opSecTechnicalAssessment/target/opsec_gateway-0.0.1-SNAPSHOT.jar
+$ nohup java -jar opSecTechnicalAssessment/target/opsec_gateway-0.0.1-SNAPSHOT.jar &
 ```
 
 ```bash
